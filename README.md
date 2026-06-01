@@ -1,6 +1,10 @@
-# rvc-free-colab
+# rvc-free-colab — train RVC voice models free on Google Colab (2026)
 
-Getting the old Rejekts "RVC Train" Colab notebook to actually train again on a current Colab runtime, without paying for anything.
+Getting the old Rejekts "RVC Train" Colab notebook to actually train again on a current Colab runtime, without paying for anything. Patched for Python 3.12, numpy 2.x, torch 2.x and transformers 5.x — fairseq removed, runs on the free T4.
+
+> If this saved you an afternoon of dependency archaeology, please ⭐ **star the repo** — it genuinely helps others find it, and it's the only thing we ask in return. Issues and PRs welcome.
+
+Keywords: RVC, Retrieval-based Voice Conversion, voice cloning, AI voice, Google Colab, free GPU, T4, fairseq alternative, ContentVec, HuBERT, train RVC model, Colab notebook fix.
 
 I went to train a voice model with the well-known [ardha27 / Rejekts RVC notebook](https://github.com/ardha27/AI-Song-Cover-RVC) and hit a wall: it was written back when Colab ran an older Python with numba 0.56, numpy 1.23 and fairseq. Colab has since moved to Python 3.12, numpy 2.x, torch 2.x and transformers 5.x, and the notebook now falls over in four different spots before it can finish a single epoch. None of the breakage is in the RVC training itself — it's all dependency rot and a couple of removed library APIs.
 
@@ -45,4 +49,14 @@ Heads up: training writes a fair amount to Drive (checkpoints, the spectrogram c
 - HuBERT weights: [lengyue233/content-vec-best](https://huggingface.co/lengyue233/content-vec-best)
 - transformers-based RVC references I leaned on: [esnya/hf-rvc](https://github.com/esnya/hf-rvc) and [Applio](https://github.com/IAHispano/Applio)
 
-MIT licensed.
+## Support this work
+
+Built and maintained by **[webvijayi](https://github.com/webvijayi)**. It's free to use under MIT — the only condition is keeping the attribution. If it helped:
+
+- ⭐ Star the repo so more people find it
+- 🐛 Open an issue if a step breaks on a newer Colab runtime (they change things often)
+- 🔁 Share it with anyone fighting the same fairseq / numpy 2.x errors
+
+## License
+
+MIT — free for any use, including commercial, **as long as the copyright/attribution to webvijayi is retained** (that's all the MIT license requires). See [LICENSE](LICENSE).
