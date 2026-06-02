@@ -38,9 +38,17 @@ Colab blocks the RVC Gradio web UI on the free tier. If you launch it you'll get
 
 Heads up: training writes a fair amount to Drive (checkpoints, the spectrogram cache). If your Drive is near full you'll see truncated-file errors mid-training, so clear some space first or point the project at Colab's local disk.
 
+## Prefer no time limits? Train on Modal instead
+
+If Colab's idle disconnects and session cap are getting in your way, there's a
+second free-GPU path: **[train on Modal](MODAL.md)**. The job runs server-side so
+you can close your laptop, and because you control the Python version there, you
+pin 3.10 and stock RVC runs with no patches at all. Full app and a walkthrough of
+the Modal-specific gotchas are in **[MODAL.md](MODAL.md)**.
+
 ## What's in here
 
-`apply_fixes.py` does all four patches in place against a downloaded `project-main`, and it's safe to re-run. The replacement `extract_feature_print.py` is embedded inside it. There are no model weights and no audio in this repo — just the code and notes.
+`apply_fixes.py` does all four patches in place against a downloaded `project-main`, and it's safe to re-run. The replacement `extract_feature_print.py` is embedded inside it. `modal/train_rvc_modal.py` + [MODAL.md](MODAL.md) are the no-time-limit Modal path. There are no model weights and no audio in this repo — just the code and notes.
 
 ## Credits
 
